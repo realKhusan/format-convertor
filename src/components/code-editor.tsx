@@ -18,7 +18,6 @@ export function CodeEditor({
   value,
   onChange,
   placeholder = "Enter your code here...",
-  language = "json",
   readOnly = false,
   className,
 }: CodeEditorProps) {
