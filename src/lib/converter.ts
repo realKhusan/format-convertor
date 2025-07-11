@@ -1,14 +1,7 @@
-/**
- * Converts between JSON and JavaScript object formats
- * @param input The input string to convert
- * @param isJsonToJs true for JSON to JS, false for JS to JSON
- * @returns The converted string
- */
 export function convertFormat(input: string, isJsonToJs: boolean): string {
   if (!input.trim()) {
     throw new Error("Please enter some data to convert");
   }
-
   try {
     if (isJsonToJs) {
       // JSON to JavaScript
