@@ -7,6 +7,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle, Copy, FileJson, Code, ArrowRightLeft } from "lucide-react"
 import { CodeEditor } from "@/components/code-editor"
 import { convertFormat } from "@/lib/converter"
+import { toast } from "sonner"
 
 export function ConverterSection() {
     const [inputValue, setInputValue] = useState("")
@@ -27,6 +28,7 @@ export function ConverterSection() {
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(outputValue)
+        toast.success("Copied to clipboard!")
     }
 
     const swapFormats = () => {

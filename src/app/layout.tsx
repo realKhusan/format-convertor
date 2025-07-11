@@ -2,12 +2,13 @@ import type React from "react"
 import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Format Converter",
-  description: "Convert between different data formats like JSON, TypeScript, JavaScript, CSV, and YAML",
+  title: "JSON ↔ JS Converter",
+  description: "Convert between JSON and JavaScript objects easily",
 }
 
 export default function RootLayout({
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
