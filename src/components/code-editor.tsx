@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useRef, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
@@ -9,7 +8,6 @@ interface CodeEditorProps {
   value: string
   onChange: (value: string) => void
   placeholder?: string
-  language?: string
   readOnly?: boolean
   className?: string
 }
@@ -48,13 +46,12 @@ export function CodeEditor({
   }
 
   return (
-    <div className={cn("relative border rounded-md overflow-hidden bg-background", className)}>
+    <div className={cn("relative border border-border rounded-md overflow-hidden bg-background", className)}>
       <div className="flex">
         {/* Line Numbers */}
         <div
           ref={lineNumbersRef}
-          className="flex-shrink-0 w-12 bg-muted/50 border-r overflow-hidden"
-          style={{ height: "300px" }}
+          className="flex-shrink-0 w-12 bg-muted/50 border-r border-border overflow-hidden h-[300px]"
         >
           <div className="py-3 px-2 text-xs text-muted-foreground font-mono leading-5">
             {Array.from({ length: lineCount }, (_, i) => (
@@ -66,7 +63,7 @@ export function CodeEditor({
         </div>
 
         {/* Code Area */}
-        <div className="flex-1 relative">
+        <div className="flex-1 relative h-[300px]">
           <textarea
             ref={textareaRef}
             value={value}
